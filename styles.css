@@ -1,0 +1,58 @@
+* {
+	margin: 0;
+	padding: 10px;
+	box-sizing: border-box;
+	font-family: Georgia, sans-serif;
+}
+
+body {
+	background-image: url(https://pix10.agoda.net/geo/city/15591/fc840c90453855ae6f9a7b9cd367e71c.jpg?s=1920x822);
+	background-position: center top;
+	background-attachment: fixed;
+}
+
+main {
+	padding: 150px 33% 10px;
+	color: black;
+	display: block;
+	height: 1000px;
+}
+
+header > h1 {
+	text-align: center;
+}
+
+.current-page {
+	position: absolute;
+	top: 80px;
+	left: 45.5%;
+	font-size: 25px;
+}
+
+.sidenav {
+	top: 200px;
+	left: 0px;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.sidenav p {
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	display: block;
+}
+
+.sidenav p:hover {
+	cursor: pointer;
+	border: 4px solid #24272E;
+}
+
+#country-names {
+	position: absolute;
+	top: 160px;
+	left: 47%;
+}
