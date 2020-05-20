@@ -17,6 +17,23 @@ function countryToISO(country) {
 	if(country === "South Korea") return "KR";
 	if(country === "Japan") return "JP";
 	if(country === "Taiwan") return "TW";
+	if(country === "Australia") return "AU";
+	if(country === "Brazil") return "BR";
+	if(country === "Canada") return "CA";
+	if(country === "Hong Kong") return "HK";
+	if(country === "Colombia") return "CO";
+	if(country === "France") return "FR";
+	if(country === "Germany") return "DE";
+	if(country === "Greece") return "GR";
+	if(country === "India") return "IN";
+	if(country === "Indonesia") return "ID";
+	if(country === "Malaysia") return "MY";
+	if(country === "Mexico") return "MX";
+	if(country === "Philippines") return "PH";
+	if(country === "Poland") return "PL";
+	if(country === "Singapore") return "SG";
+	if(country === "United Kingdom") return "GB";
+	if(country === "Vietnam") return "VN";
 }
 
 function changeStat(stat) {
@@ -103,7 +120,7 @@ function trending(country) {
 				$('main').empty();
 				var rank = 1;
 				$.each(data.items, function(i, item) {
-					var thumb = item.snippet.thumbnails.standard.url;
+					var thumb = item.snippet.thumbnails.medium.url;
 					var title = item.snippet.title;
 					var vid = item.id;
 					var channel = item.snippet.channelTitle;

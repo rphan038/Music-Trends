@@ -55,4 +55,7 @@ header > h1 {
 	position: absolute;
 	top: 160px;
 	left: 47%;
+	/*text-align: left;
+	width: 100px;
+	height: 10px;*/
 }
