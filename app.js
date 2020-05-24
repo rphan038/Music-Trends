@@ -101,7 +101,8 @@ function imgToVid(mediaId, vidId) {
 function trending(country) {
 	let c = countryToISO(country);
 	$(document).ready(function () {
-		var key = 'AIzaSyB1eGmERaVmCcmRXAWUQocoGLHuKtGs3cI';
+		//AIzaSyB3PVG8UO8tsz5cE08sWxfdPLd3xIX3uu8
+		var key = 'AIzaSyB3PVG8UO8tsz5cE08sWxfdPLd3xIX3uu8';
 		var URL = 'https://www.googleapis.com/youtube/v3/videos';
 
 		var options = {
