@@ -7,7 +7,6 @@ function main() {
 	countrySelector_select.onchange = function() {
 		currCountry_option.innerHTML = document.getElementById("country-names").value;
 		currCountry_option = document.getElementById("country-names").value;
-		console.log(currCountry_option);
 		trending(currCountry_option);
 	};
 }
@@ -40,7 +39,7 @@ function changeStat(stat) {
 	if(stat === "t") {
 		trending("South Korea");
 	} else if(stat === "p") {
-		pba();
+		hotTags("South Korea");
 	}
 }
 
@@ -91,6 +90,42 @@ function searchArtist(query) {
 	});
 }
 
+function hotTags(country) {
+	let c = countryToISO(country);
+	$(document).ready(function () {
+		var key = 'AIzaSyB3PVG8UO8tsz5cE08sWxfdPLd3xIX3uu8';
+		var URL = 'https://www.googleapis.com/youtube/v3/videos';
+		var tagsMap = new Map();
+
+		var options = {
+			part: 'snippet',
+			key: key,
+			chart: 'mostPopular',
+			maxResults: 50,
+			regionCode: c,
+			videoCategoryId: 10
+		}
+
+		load();
+
+		function load() {
+			$.getJSON(URL, options, function(data) {
+				$('main').empty();
+				$.each(data.items, function(i, item) {
+					var tags = item.snippet.tags;
+					tags.forEach(function(idx) {
+						if(!tagsMap.has(idx)) {
+							tagsMap.set(idx, 1);
+						} else if(tagsMap.has(idx)){
+							tagsMap.set(idx, tagsMap.get(idx) + 1);
+						}
+					});
+				});
+			});
+			console.log(tagsMap);
+		}
+}
+
 function imgToVid(mediaId, vidId) {
 	$(`#${mediaId}`).empty();
 	$(`<iframe width="560" height="315" src="https://www.youtube.com/embed/${vidId}" 
@@ -101,7 +136,6 @@ function imgToVid(mediaId, vidId) {
 function trending(country) {
 	let c = countryToISO(country);
 	$(document).ready(function () {
-		//AIzaSyB3PVG8UO8tsz5cE08sWxfdPLd3xIX3uu8
 		var key = 'AIzaSyB3PVG8UO8tsz5cE08sWxfdPLd3xIX3uu8';
 		var URL = 'https://www.googleapis.com/youtube/v3/videos';
 
