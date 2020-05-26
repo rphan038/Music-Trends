@@ -114,13 +114,15 @@ function hotTags(country) {
 				console.log(data);
 				$.each(data.items, function(i, item) {
 					var tags = item.snippet.tags;
-					tags.forEach(function(item) {
-						if(!tagsMap.has(item)) {
-							tagsMap.set(item, 1);
-						} else if(tagsMap.has(item)){
-							tagsMap.set(item, tagsMap.get(item) + 1);
-						}
-					});
+					if(tags !== undefined) {
+						tags.forEach(function(item) {
+							if(!tagsMap.has(item)) {
+								tagsMap.set(item, 1);
+							} else if(tagsMap.has(item)){
+								tagsMap.set(item, tagsMap.get(item) + 1);
+							}
+						});
+					}
 				});
 			});
 			console.log(tagsMap);
