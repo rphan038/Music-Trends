@@ -124,6 +124,7 @@ function hotTags(country) {
 			});
 			console.log(tagsMap);
 		}
+	}
 }
 
 function imgToVid(mediaId, vidId) {
