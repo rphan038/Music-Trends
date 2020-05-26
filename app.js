@@ -113,6 +113,7 @@ function hotTags(country) {
 				$('main').empty();
 				$.each(data.items, function(i, item) {
 					var tags = item.snippet.tags;
+					console.log(tags);
 					tags.forEach(function(item) {
 						if(!tagsMap.has(item)) {
 							tagsMap.set(item, 1);
