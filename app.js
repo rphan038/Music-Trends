@@ -1,13 +1,18 @@
 const countrySelector_select = document.getElementById("country-names");
 var currCountry_option = document.getElementById("country-names").value;
 const currentPage_p = document.querySelector(".current-page > p");
+var currTab = 't';
 
 function main() {
 	trending("South Korea");
 	countrySelector_select.onchange = function() {
 		currCountry_option.innerHTML = document.getElementById("country-names").value;
 		currCountry_option = document.getElementById("country-names").value;
-		trending(currCountry_option);
+		if(currTab === "t") {
+			trending(currCountry_option);
+		} else if(currTab === "h'") {
+			hotTags(currCountry_option);
+		}
 	};
 }
 
@@ -38,8 +43,10 @@ function countryToISO(country) {
 function changeStat(stat) {
 	if(stat === "t") {
 		trending("South Korea");
+		currTab = 't';
 	} else if(stat === "p") {
 		hotTags("South Korea");
+		currTab = 'h'
 	}
 }
 
@@ -138,8 +145,6 @@ function hotTags(country) {
 					largestV[i] = x;
 					largestK[i] = y;
 				}
-				console.log(largestV);
-				console.log(largestK);
 				$('main').append(`<canvas id="chart" width="400" height="400"></canvas>
 					<script>
 						var ctx = document.getElementById('chart').getContext('2d');
