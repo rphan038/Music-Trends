@@ -146,10 +146,14 @@ function hotTags(country) {
 						var myChart = new Chart(ctx, {
 							type: 'bar',
 							data: {
-								labels: ${largestK},
+								labels: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 								datasets: [{
 									label: 'Tags',
-									data: ${largestV},
+									data: [${largestV[0]}, ${largestV[1]}, ${largestV[2]}, 
+										${largestV[3]}, ${largestV[4]}, ${largestV[5]}, 
+										${largestV[6]}, ${largestV[7]}, ${largestV[8]}, ${largestV[9]}],
 									backgroundColor: [
 						                'rgba(255, 99, 132, 0.2)',
 						                'rgba(54, 162, 235, 0.2)',
