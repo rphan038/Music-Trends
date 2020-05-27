@@ -50,53 +50,6 @@ function changeStat(stat) {
 	}
 }
 
-function pba() {
-	$('main').empty();
-	$('main').append(`<input type="text" oninput="searchArtist(this.value)"/>`);
-}
-
-function searchArtist(query) {
-	$(document).ready(function () {
-		var URL = 'https://api.spotify.com/v1/artists/3HqSLMAZ3g3d5poNaI7GOU/top-tracks?country=US';
-		var options = {
-			Accept: 'application/json',
-			Authorization: 'Bearer BQDB1afZPojAXIrqVIlMG_CKFbmI0mk9o7R0AkQTLgS1mKLD2IiJZCp88bmQCqYV8eVGXNUMjzU1TYqmHrOcTYx9s_9CA12K0MCwSChHw3VZ9gdA95a4hDUUtMay1vxkB6-M2FWJ',
-		}
-		$.getJSON(URL, options, function(data) {
-			console.log(data);
-		});
-		// var key = '';
-		// var URL = 'https://api.spotify.com/v1/search';
-
-		// var clientID = '33e6b36dc46c45729a03c0a7014d73e6';
-		// var clientSecretID = 'eeb2fbf150684ccbb2bce82121814c18';
-		// var authorizeURL = 'https://accounts.spotify.com/authorize?client_id=33e6b36dc46c45729a03c0a7014d73e6&response_type=code&redirect_uri=https%3A%2F%2Fgoogle.com%2F';
-
-		// var options = {
-		// 	q: query,
-		// 	type: 'artist',
-		// 	key: 'BQArnLC6MUSyNj7lpPO_mhGjFpSyqZFwr_794rJiFxnY-qzIisat5KdUkiIGE3naiGj2IffSQyAgp9t8B6cbwrouhtbiqRak_KVKYHbt2wyIyG7YMAXuSFcx1z4n3ZPTxCIn_-VL'
-		// 	//authorization: 'BQArnLC6MUSyNj7lpPO_mhGjFpSyqZFwr_794rJiFxnY-qzIisat5KdUkiIGE3naiGj2IffSQyAgp9t8B6cbwrouhtbiqRak_KVKYHbt2wyIyG7YMAXuSFcx1z4n3ZPTxCIn_-VL'
-		// }
-		// console.log("hey");
-		// $.ajax({
-		// 	url: 'https://api.spotify.com/v1/search',
-		// 	type: 'GET',
-		// 	dataType: 'json',
-		// 	contentType: 'application/json',
-		// 	beforeSend: function(xhr) {
-		// 		xhr.setRequestHeader('Authorization', 'Bearer BQArnLC6MUSyNj7lpPO_mhGjFpSyqZFwr_794rJiFxnY-qzIisat5KdUkiIGE3naiGj2IffSQyAgp9t8B6cbwrouhtbiqRak_KVKYHbt2wyIyG7YMAXuSFcx1z4n3ZPTxCIn_-VL');
-		// 	},
-		// 	data: {
-		// 		"q" : `${query}&type=artist`
-		// 	},
-		// 	success: function(data) {
-		// 		console.log(data);
-		// 	}
-		// });
-	});
-}
-
 function hotTags(country) {
 	let c = countryToISO(country);
 	$(document).ready(function () {
@@ -160,12 +113,16 @@ function hotTags(country) {
 										${largestV[3]}, ${largestV[4]}, ${largestV[5]}, 
 										${largestV[6]}, ${largestV[7]}, ${largestV[8]}, ${largestV[9]}],
 									backgroundColor: [
-						                'rgba(255, 99, 132, 0.2)',
-						                'rgba(54, 162, 235, 0.2)',
-						                'rgba(255, 206, 86, 0.2)',
-						                'rgba(75, 192, 192, 0.2)',
-						                'rgba(153, 102, 255, 0.2)',
-						                'rgba(255, 159, 64, 0.2)'
+						                'rgba(255, 99, 132, 0.5)',
+						                'rgba(54, 162, 235, 0.5)',
+						                'rgba(255, 206, 86, 0.5)',
+						                'rgba(75, 192, 192, 0.5)',
+						                'rgba(153, 102, 255, 0.5)',
+						                'rgba(255, 159, 64, 0.5)',
+						                'rgba(5, 57, 111, 0.5)',
+						                'rgba(172, 128, 225, 0.5)',
+						                'rgba(143, 147, 149, 0.5)',
+						                'rgba(116, 232, 127, 0.5)'
 						            ],
 						            borderColor: [
 						                'rgba(255, 99, 132, 1)',
@@ -173,7 +130,11 @@ function hotTags(country) {
 						                'rgba(255, 206, 86, 1)',
 						                'rgba(75, 192, 192, 1)',
 						                'rgba(153, 102, 255, 1)',
-						                'rgba(255, 159, 64, 1)'
+						                'rgba(255, 159, 64, 1)',
+						                'rgba(5, 57, 111, 1)',
+						                'rgba(172, 128, 225, 1)',
+						                'rgba(143, 147, 149, 1)',
+						                'rgba(116, 232, 127, 1)'
 						            ],
 						            borderWidth: 1
 								}]
