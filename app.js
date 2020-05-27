@@ -124,6 +124,22 @@ function hotTags(country) {
 						});
 					}
 				});
+				var largestV = [];
+				var largestK = [];
+				for(var i = 0; i < 10; i++) {
+					var x = 0;
+					var y = '';
+					for(var ent of tagsMap.entries()) {
+						if(ent[1] > x) {
+							x = ent[1];
+							y = ent[0];
+						}
+					}
+					largestV[i] = x;
+					largestK[i] = y;
+				}
+				console.log(largestV);
+				console.log(largestK);
 			});
 			console.log(tagsMap);
 		}
