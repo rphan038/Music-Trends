@@ -10,7 +10,7 @@ function main() {
 		currCountry_option = document.getElementById("country-names").value;
 		if(currTab === "t") {
 			trending(currCountry_option);
-		} else if(currTab === "h'") {
+		} else if(currTab === "h") {
 			hotTags(currCountry_option);
 		}
 	};
