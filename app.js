@@ -133,6 +133,7 @@ function hotTags(country) {
 						if(ent[1] > x) {
 							x = ent[1];
 							y = ent[0];
+							tagsMap.delete(y);
 						}
 					}
 					largestV[i] = x;
