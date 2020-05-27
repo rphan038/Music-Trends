@@ -140,10 +140,21 @@ function hotTags(country) {
 								}]
 							},
 							options: {
+								legend: {
+									labels: {
+										fontColor: "black"
+									}
+								},
 								scales: {
 									yAxes: [{
 										ticks: {
+											fontColor: "black",
 											beginAtZero: true
+										}
+									}],
+									xAxes: [{
+										tics: {
+											fontColor: "black"
 										}
 									}]
 								}
