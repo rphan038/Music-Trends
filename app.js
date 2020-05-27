@@ -142,6 +142,7 @@ function hotTags(country) {
 				console.log(largestK);
 				$('main').append(`<canvas id="chart" width="400" height="400"></canvas>`);
 				var ctx = document.getElementById('chart').getContext('2d');
+				var Chart = require('node_modules/chart.js/dist/Chart.js');
 				var myChart = new Chart(ctx, {
 					type: 'bar',
 					data: {
