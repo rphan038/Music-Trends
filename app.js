@@ -84,7 +84,8 @@ function hotTags(country) {
 								tagsMap.set(idx, tagsMap.get(idx) + 1);
 								var tmpArr1 = tagsMap.get(idx);
 								var tmpArr2 = new Array(vid);
-								tagsMapVids.set(idx, tmpArr1.concat(tmpArr2));
+								tmpArr1 = tmpArr1.concat(tmpArr2);
+								tagsMapVids.set(idx, tmpArr1);
 							}
 						});
 					}
