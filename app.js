@@ -169,18 +169,7 @@ function hotTags(country) {
 						});
 						myChart.defaults.global.defaultFontColor = "black";
 						thisBar("click");
-						function thisBar(evt) {
-							var point = myChart.getElementAtEvent(evt)[0];
-							if(point) {
-								$('VIDS').empty();
-								var label = myChart.data.labels[point._index];
-								var arr = tagsMapVids.get(label);
-								for(var v of arr) {
-									$('VIDS').append("<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" 
-										frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>");
-								}
-							}
-						}
+
 					</script>
 					<div class="media" id="VIDS">
 					</div>
@@ -188,6 +177,20 @@ function hotTags(country) {
 			});
 		}
 	});
+}
+
+function thisBar(evt) {
+	var point = myChart.getElementAtEvent(evt)[0];
+	if(point) {
+		$('VIDS').empty();
+		var label = myChart.data.labels[point._index];
+		var arr = tagsMapVids.get(label);
+		for(var v of arr) {
+			$('VIDS').append(`<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" 
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
+			`);
+		}
+	}
 }
 
 function imgToVid(mediaId, vidId) {
