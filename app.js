@@ -56,6 +56,7 @@ function hotTags(country) {
 		var key = 'AIzaSyB3PVG8UO8tsz5cE08sWxfdPLd3xIX3uu8';
 		var URL = 'https://www.googleapis.com/youtube/v3/videos';
 		var tagsMap = new Map();
+		var tagsMapVids = new Map();
 
 		var options = {
 			part: 'snippet',
@@ -73,12 +74,17 @@ function hotTags(country) {
 				$('main').empty();
 				$.each(data.items, function(i, item) {
 					var tags = item.snippet.tags;
+					var vid = item.id;
 					if(tags !== undefined) {
 						tags.forEach(function(idx) {
 							if(!tagsMap.has(idx)) {
 								tagsMap.set(idx, 1);
+								tagsMapVids.set(idx, new Array(vid));
 							} else if(tagsMap.has(idx)){
 								tagsMap.set(idx, tagsMap.get(idx) + 1);
+								var tmpArr1 = tagsMap.get(idx);
+								var tmpArr2 = new Array(vid);
+								tagsMapVids.set(idx, tmpArr1.concat(tmpArr2));
 							}
 						});
 					}
@@ -160,7 +166,23 @@ function hotTags(country) {
 								}
 							}
 						});
+						myChart.defaults.global.defaultFontColor = "black";
+						thisBar("click");
+						function thisBar(evt) {
+							var point = myChart.getElementAtEvent(evt)[0];
+							if(point) {
+								$('VIDS').empty();
+								var label = myChar.data.labels[point._index];
+								var arr = tagsMapVids.get(label);
+								for(var v of arr) {
+									$('VIDS').append(<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" 
+										frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>);
+								}
+							}
+						}
 					</script>
+					<div class="media" id="VIDS">
+					</div>
 				`);
 			});
 		}
