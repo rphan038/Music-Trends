@@ -82,7 +82,7 @@ function hotTags(country) {
 								tagsMapVids.set(idx, new Array(vid));
 							} else if(tagsMap.has(idx)){
 								tagsMap.set(idx, tagsMap.get(idx) + 1);
-								var tmpArr1 = tagsMap.get(idx);
+								var tmpArr1 = tagsMapVids.get(idx);
 								var tmpArr2 = new Array(vid);
 								tmpArr1 = tmpArr1.concat(tmpArr2);
 								tagsMapVids.set(idx, tmpArr1);
