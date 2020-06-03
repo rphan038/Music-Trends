@@ -168,7 +168,7 @@ function hotTags(country) {
 							}
 						});
 						myChart.defaults.global.defaultFontColor = "black";
-						thisBar("click");
+						thisBar("click", myChart);
 
 					</script>
 					<div class="media" id="VIDS">
@@ -179,7 +179,7 @@ function hotTags(country) {
 	});
 }
 
-function thisBar(evt) {
+function thisBar(evt, myChart) {
 	var point = myChart.getElementAtEvent(evt)[0];
 	if(point) {
 		$('VIDS').empty();
