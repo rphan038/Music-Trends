@@ -168,7 +168,7 @@ function hotTags(country) {
 								}
 							}
 						});
-						document.getElementById("chart).onclick = thisBar("click", myChart);
+						document.getElementById("chart").onclick = thisBar("click", myChart);
 
 					</script>
 					<div class="media" id="VIDS">
