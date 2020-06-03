@@ -108,6 +108,7 @@ function hotTags(country) {
 				$('main').append(`<canvas id="chart" width="400" height="400"></canvas>
 					<script>
 						var ctx = document.getElementById('chart').getContext('2d');
+						Chart.defaults.global.defaultFontColor = "black";
 						var myChart = new Chart(ctx, {
 							type: 'bar',
 							data: {
@@ -167,7 +168,6 @@ function hotTags(country) {
 								}
 							}
 						});
-						myChart.defaults.global.defaultFontColor = "black";
 						thisBar("click", myChart);
 
 					</script>
