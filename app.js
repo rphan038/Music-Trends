@@ -168,7 +168,7 @@ function hotTags(country) {
 								}
 							}
 						});
-						document.getElementById("chart").onclick = thisBar("click", myChart);
+						document.getElementById("chart").onclick = thisBar(evt, myChart);
 
 					</script>
 					<div class="media" id="VIDS">
@@ -181,6 +181,7 @@ function hotTags(country) {
 
 function thisBar(evt, myChart) {
 	var point = myChart.getElementAtEvent(evt)[0];
+	console.log("TEST");
 	console.log(myChart.data.labels[point._index]);
 	if(point) {
 		$('VIDS').empty();
