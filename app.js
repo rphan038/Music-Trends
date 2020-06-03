@@ -181,6 +181,7 @@ function hotTags(country) {
 
 function thisBar(evt, myChart) {
 	var point = myChart.getElementAtEvent(evt)[0];
+	console.log(myChart.data.labels[point._index]);
 	if(point) {
 		$('VIDS').empty();
 		var label = myChart.data.labels[point._index];
