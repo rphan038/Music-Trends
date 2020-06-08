@@ -11,18 +11,15 @@
 		<header>
 			<h1>Trending Music Statistics</h1>
 		</header>
+		<!-- Name of the current tab -->
 		<div class="current-page">
 			<p>Trending Songs</p>
 		</div>
-		<script>
-			greeting();
-			function greeting() {
-				var tmp = confirm("Welcome!\nBelow are the current trending songs in ___. Click the thumbnail to load the song and play it! Click the channel name to open the Youtube channel in another tab. You can also explore other music statistics in the left side bar.");
-			}
-		</script>
+		<!-- This will be filled with code that will load the videos/thumbnails -->
 		<main>
 		</main>
 
+		<!-- The pull down menu -->
 		<select id="country-names" names="countries">
 			<option value="Australia">Australia</option>
 			<option value="Brazil">Brazil</option>
@@ -47,12 +44,21 @@
 			<option value="Vietnam">Vietnam</option>
 		</select>
 
+		<!-- Links the JavaScript File to this HTML file -->
 		<script src="app.js" charset="UTF-8"></script>
 
+		<!-- Left Sidebar navigation to erase and load different statistics -->
 		<div class="sidenav">
 			<p id="t" onclick="changeStat(this.id)">Trending Songs</p>
   			<p id="v" onclick="changeStat(this.id)">Most Viewed</p>
   			<p id="p" onclick="changeStat(this.id)">Trending Tags</p>
 		</div>
+		<!-- Pop up dialogue that greets the user and instroduces the site's features -->
+		<script>
+			greeting();
+			function greeting() {
+				var tmp = confirm("Welcome!\nBelow are the current trending songs in ___. Click the thumbnail to load the song and play it! Click the channel name to open the Youtube channel in another tab. You can also explore other music statistics in the left side bar.");
+			}
+		</script>
 	</body>
 </html>
