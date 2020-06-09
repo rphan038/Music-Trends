@@ -14,10 +14,10 @@ function main() {
 			hotTags(currCountry_option);
 		}
 	};
-	var tmp = confirm(`Welcome!\nBelow are the current trending songs in ___. 
-		Click the thumbnail to load the song and play it! Click the channel name to open 
-		the Youtube channel in another tab. You can also explore other music statistics 
-		in the left side bar.`);
+	var tmp = confirm("Welcome!\nBelow are the current trending songs in ___." + 
+		"Click the thumbnail to load the song and play it! Click the channel name to open" + 
+		"the Youtube channel in another tab. You can also explore other music statistics" + 
+		"in the left side bar.");
 }
 
 function countryToISO(country) {
