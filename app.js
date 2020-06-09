@@ -2,7 +2,6 @@ const countrySelector_select = document.getElementById("country-names");
 var currCountry_option = document.getElementById("country-names").value;
 const currentPage_p = document.querySelector(".current-page > p");
 var currTab = 't';
-var button = true;
 
 function main() {
 	trending("South Korea");
@@ -248,12 +247,5 @@ function trending(country) {
 			});
 		}
 	});
-	if(button) {
-		var tmp = confirm("Welcome!\nBelow are the current trending songs in ___." + 
-			"Click the thumbnail to load the song and play it! Click the channel name to open" + 
-			"the Youtube channel in another tab. You can also explore other music statistics" + 
-			"in the left side bar.");
-		button = false;
-	}
 }
 main();
