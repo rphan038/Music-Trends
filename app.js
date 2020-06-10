@@ -116,7 +116,9 @@ function hotTags(country) {
 										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
 										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 								datasets: [{
-									label: 'Tags',
+									label: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 									data: [${largestV[0]}, ${largestV[1]}, ${largestV[2]}, 
 										${largestV[3]}, ${largestV[4]}, ${largestV[5]}, 
 										${largestV[6]}, ${largestV[7]}, ${largestV[8]}, ${largestV[9]}],
