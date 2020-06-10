@@ -175,7 +175,7 @@ function hotTags(country) {
 						function vids(e, legendItem) {
 							var point = legendItem.datasetIndex;
 							//var point = myChart.getElementAtEvent(evt)[0];
-							console.log("TEST");
+							console.log(point);
 							//console.log(myChart.data.labels[point._index]);
 							if(point) {
 								$('VIDS').empty();
@@ -185,6 +185,7 @@ function hotTags(country) {
 										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
 								var arr = tagsMapVids.get(tmp[point]);
 								for(var v of arr) {
+									console.log(v);
 									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 								}
 							}
