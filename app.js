@@ -117,6 +117,7 @@ function hotTags(country) {
 										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 								datasets: [{
 									label: 'Tags',
+									onClick: vids,
 									data: [${largestV[0]}, ${largestV[1]}, ${largestV[2]}, 
 										${largestV[3]}, ${largestV[4]}, ${largestV[5]}, 
 										${largestV[6]}, ${largestV[7]}, ${largestV[8]}, ${largestV[9]}],
@@ -151,8 +152,7 @@ function hotTags(country) {
 								legend: {
 									labels: {
 										fontColor: "black"
-									},
-									onClick: vids
+									}
 								},
 								scales: {
 									yAxes: [{
