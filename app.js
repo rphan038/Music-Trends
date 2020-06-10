@@ -151,7 +151,8 @@ function hotTags(country) {
 								legend: {
 									labels: {
 										fontColor: "black"
-									}
+									},
+									onClick: vids
 								},
 								scales: {
 									yAxes: [{
@@ -168,8 +169,10 @@ function hotTags(country) {
 								}
 							}
 						});
-						document.getElementById("chart").onclick = thisBar(jQuery.Event("click"), myChart);
-
+						//document.getElementById("chart").onclick = thisBar(jQuery.Event("click"), myChart);
+						function vids() {
+							alert('hello');
+						}
 					</script>
 					<div class="media" id="VIDS">
 					</div>
