@@ -182,9 +182,7 @@ function hotTags(country) {
 								//var label = myChart.data.labels[point._index];
 								var arr = tagsMapVids.get(i);
 								for(var v of arr) {
-									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" 
-										frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
-									');
+									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 								}
 							}
 						}
