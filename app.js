@@ -154,7 +154,7 @@ function hotTags(country) {
 									labels: {
 										fontColor: "black"
 									},
-									onClick: vids(i)
+									onClick: vids
 								},
 								scales: {
 									yAxes: [{
@@ -172,15 +172,15 @@ function hotTags(country) {
 							}
 						});
 						//document.getElementById("chart").onclick = thisBar(jQuery.Event("click"), myChart);
-						function vids(i) {
-							var point = i.text;
+						function vids(e, legendItem) {
+							var point = legendItem.datasetIndex;
 							//var point = myChart.getElementAtEvent(evt)[0];
 							console.log("TEST");
 							//console.log(myChart.data.labels[point._index]);
 							if(point) {
 								$('VIDS').empty();
 								//var label = myChart.data.labels[point._index];
-								var arr = tagsMapVids.get(i);
+								var arr = tagsMapVids.get(${largestK[point]});
 								for(var v of arr) {
 									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 								}
