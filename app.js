@@ -117,7 +117,6 @@ function hotTags(country) {
 										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 								datasets: [{
 									label: 'Tags',
-									onClick: vids,
 									data: [${largestV[0]}, ${largestV[1]}, ${largestV[2]}, 
 										${largestV[3]}, ${largestV[4]}, ${largestV[5]}, 
 										${largestV[6]}, ${largestV[7]}, ${largestV[8]}, ${largestV[9]}],
@@ -152,7 +151,8 @@ function hotTags(country) {
 								legend: {
 									labels: {
 										fontColor: "black"
-									}
+									},
+									onClick: vids
 								},
 								scales: {
 									yAxes: [{
@@ -171,7 +171,19 @@ function hotTags(country) {
 						});
 						//document.getElementById("chart").onclick = thisBar(jQuery.Event("click"), myChart);
 						function vids() {
-							alert('hello');
+							var point = myChart.getElementAtEvent(evt)[0];
+							console.log("TEST");
+							console.log(myChart.data.labels[point._index]);
+							if(point) {
+								$('VIDS').empty();
+								var label = myChart.data.labels[point._index];
+								var arr = tagsMapVids.get(label);
+								for(var v of arr) {
+									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" 
+										frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
+									'');
+								}
+							}
 						}
 					</script>
 					<div class="media" id="VIDS">
