@@ -112,9 +112,9 @@ function hotTags(country) {
 						var myChart = new Chart(ctx, {
 							type: 'bar',
 							data: {
-								labels: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
-										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
-										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
+								labels: [['${largestK[0]}'], ['${largestK[1]}'], ['${largestK[2]}'], 
+										['${largestK[3]}'], ['${largestK[4]}'], ['${largestK[5]}'], 
+										['${largestK[6]}'], ['${largestK[7]}'], ['${largestK[8]}'], ['${largestK[9]}']],
 								datasets: [{
 									label: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
 										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
@@ -177,17 +177,15 @@ function hotTags(country) {
 							//var point = myChart.getElementAtEvent(evt)[0];
 							console.log(point);
 							//console.log(myChart.data.labels[point._index]);
-							if(point) {
-								$('VIDS').empty();
-								//var label = myChart.data.labels[point._index];
-								var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
-										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
-										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
-								var arr = tagsMapVids.get(tmp[point]);
-								for(var v of arr) {
-									console.log(v);
-									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
-								}
+							$('VIDS').empty();
+							//var label = myChart.data.labels[point._index];
+							var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+									'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+									'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
+							var arr = tagsMapVids.get(tmp[point]);
+							for(var v of arr) {
+								console.log(v);
+								$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 							}
 						}
 					</script>
