@@ -180,7 +180,9 @@ function hotTags(country) {
 							if(point) {
 								$('VIDS').empty();
 								//var label = myChart.data.labels[point._index];
-								var tmp = ${largestK};
+								var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
 								var arr = tagsMapVids.get(tmp[point]);
 								for(var v of arr) {
 									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
