@@ -154,7 +154,7 @@ function hotTags(country) {
 									labels: {
 										fontColor: "black"
 									},
-									onClick: vids
+									onClick: vids(i)
 								},
 								scales: {
 									yAxes: [{
@@ -172,18 +172,19 @@ function hotTags(country) {
 							}
 						});
 						//document.getElementById("chart").onclick = thisBar(jQuery.Event("click"), myChart);
-						function vids() {
-							var point = myChart.getElementAtEvent(evt)[0];
+						function vids(i) {
+							var point = i.text;
+							//var point = myChart.getElementAtEvent(evt)[0];
 							console.log("TEST");
-							console.log(myChart.data.labels[point._index]);
+							//console.log(myChart.data.labels[point._index]);
 							if(point) {
 								$('VIDS').empty();
-								var label = myChart.data.labels[point._index];
-								var arr = tagsMapVids.get(label);
+								//var label = myChart.data.labels[point._index];
+								var arr = tagsMapVids.get(i);
 								for(var v of arr) {
 									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" 
 										frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
-									'');
+									');
 								}
 							}
 						}
