@@ -178,9 +178,10 @@ function hotTags(country) {
 							console.log("TEST");
 							//console.log(myChart.data.labels[point._index]);
 							if(point) {
+								${var tmp = point;}
 								$('VIDS').empty();
 								//var label = myChart.data.labels[point._index];
-								var arr = tagsMapVids.get(${largestK[point]});
+								var arr = tagsMapVids.get(${largestK[tmp]});
 								for(var v of arr) {
 									$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 								}
