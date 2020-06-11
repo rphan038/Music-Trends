@@ -210,7 +210,8 @@ function hotTags(country) {
 							var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
 									'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
 									'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
-							var mapTmp = ${largeVidID};
+							var mapTmp = [[]];
+							mapTmp = ${largeVidID};
 							var arr = mapTmp[point];
 							for(var v of arr) {
 								console.log(v);
