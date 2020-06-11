@@ -207,40 +207,42 @@ function hotTags(country) {
 							}
 						});
 						//document.getElementById("chart").onclick = thisBar(jQuery.Event("click"), myChart);
-						function vids(e, legendItem) {
-							var point = legendItem.datasetIndex;
-							//var point = myChart.getElementAtEvent(evt)[0];
-							console.log(point);
-							//console.log(myChart.data.labels[point._index]);
-							$('VIDS').empty();
-							//var label = myChart.data.labels[point._index];
-							var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
-									'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
-									'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
-							var mapTmp = [[]];
-							mapTmp = ['${largeVidID[0]}', '${largeVidID[1]}', '${largeVidID[2]}', 
-									'${largeVidID[3]}', '${largeVidID[4]}', '${largeVidID[5]}', 
-									'${largeVidID[6]}', '${largeVidID[7]}', '${largeVidID[8]}', '${largeVidID[9]}'];
-							var arr = mapTmp[point];
-							console.log(arr);
-							var i;
-							for(i = 0; i < arr.length; i++) {
-								var v = '';
-								while(arr[i] !== ',' && i < arr.length) {
-									v += arr[i];
-									i++;
-								}
-								var t = "https://www.youtube.com/embed/" + v;
-								console.log(t);
-								//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
-								$('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>').appendTo('#VIDS');
-							}
-						}
+						
 					</script>
 				`);
 			});
 		}
 	});
+}
+
+function vids(e, legendItem) {
+	var point = legendItem.datasetIndex;
+	//var point = myChart.getElementAtEvent(evt)[0];
+	console.log(point);
+	//console.log(myChart.data.labels[point._index]);
+	$('VIDS').empty();
+	//var label = myChart.data.labels[point._index];
+	var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+			'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+			'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
+	var mapTmp = [[]];
+	mapTmp = ['${largeVidID[0]}', '${largeVidID[1]}', '${largeVidID[2]}', 
+			'${largeVidID[3]}', '${largeVidID[4]}', '${largeVidID[5]}', 
+			'${largeVidID[6]}', '${largeVidID[7]}', '${largeVidID[8]}', '${largeVidID[9]}'];
+	var arr = mapTmp[point];
+	console.log(arr);
+	var i;
+	for(i = 0; i < arr.length; i++) {
+		var v = '';
+		while(arr[i] !== ',' && i < arr.length) {
+			v += arr[i];
+			i++;
+		}
+		var t = "https://www.youtube.com/embed/" + v;
+		console.log(t);
+		//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
+		$('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>').appendTo('#VIDS');
+	}
 }
 
 function thisBar(evt, myChart) {
