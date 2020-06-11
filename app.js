@@ -169,8 +169,8 @@ function hotTags(country) {
 									borderWidth: 1,
 								}, {
 									label: '${largestK[9]}',
-									backgroundColor: 'rgba(116, 232, 127, 0.5)'
-									borderColor: 'rgba(116, 232, 127, 1)'
+									backgroundColor: 'rgba(116, 232, 127, 0.5)',
+									borderColor: 'rgba(116, 232, 127, 1)',
 									data: '${largestV[9]}',
 									borderWidth: 1,
 								}]
