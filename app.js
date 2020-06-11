@@ -108,6 +108,8 @@ function hotTags(country) {
 					largeVidID[i] = tagsMapVids.get(largestK[i]);
 				}
 				$('main').append(`<canvas id="chart" width="400" height="400"></canvas>
+					<div class="media" id="VIDS">
+					</div>
 					<script>
 						var ctx = document.getElementById('chart').getContext('2d');
 						Chart.defaults.global.defaultFontColor = 'black';
@@ -228,12 +230,11 @@ function hotTags(country) {
 								}
 								var t = "https://www.youtube.com/embed/" + v;
 								console.log(t);
-								$('VIDS').append('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
+								//$('VIDS').append('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
+								$('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>').appendTo('#VIDS');
 							}
 						}
 					</script>
-					<div class="media" id="VIDS">
-					</div>
 				`);
 			});
 		}
