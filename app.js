@@ -215,9 +215,11 @@ function hotTags(country) {
 									'${largeVidID[3]}', '${largeVidID[4]}', '${largeVidID[5]}', 
 									'${largeVidID[6]}', '${largeVidID[7]}', '${largeVidID[8]}', '${largeVidID[9]}'];
 							var arr = mapTmp[point];
-							for(var v of arr) {
-								console.log(v);
-								$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
+							console.log(arr);
+							var i = 0;
+							for(i < arr.length; i++) {
+								var t = "https://www.youtube.com/embed/" + arr[i];
+								$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 							}
 						}
 					</script>
