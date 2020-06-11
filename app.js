@@ -119,7 +119,9 @@ function hotTags(country) {
 										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
 										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 							data: {
-								labels: ['Tags'],
+								labels: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 								datasets: [{
 									label: '${largestK[0]}',
 									backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -230,7 +232,7 @@ function hotTags(country) {
 								}
 								var t = "https://www.youtube.com/embed/" + v;
 								console.log(t);
-								//$('VIDS').append('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
+								//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 								$('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>').appendTo('#VIDS');
 							}
 						}
