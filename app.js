@@ -113,6 +113,9 @@ function hotTags(country) {
 						Chart.defaults.global.defaultFontColor = 'black';
 						var myChart = new Chart(ctx, {
 							type: 'bar',
+							label: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 							data: {
 								labels: ['Tags'],
 								datasets: [{
@@ -218,7 +221,7 @@ function hotTags(country) {
 							console.log(arr);
 							var i;
 							for(i = 0; i < arr.length; i++) {
-								var t = "https://www.youtube.com/embed/" + arr[i];
+								var t = "https://www.youtube.com/embed/" + arr[point][i];
 								console.log(t);
 								$('VIDS').append('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 							}
