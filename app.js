@@ -216,8 +216,8 @@ function hotTags(country) {
 									'${largeVidID[6]}', '${largeVidID[7]}', '${largeVidID[8]}', '${largeVidID[9]}'];
 							var arr = mapTmp[point];
 							console.log(arr);
-							var i = 0;
-							for(i < arr.length; i++) {
+							var i;
+							for(i = 0; i < arr.length; i++) {
 								var t = "https://www.youtube.com/embed/" + arr[i];
 								$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 							}
