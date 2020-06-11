@@ -221,7 +221,12 @@ function hotTags(country) {
 							console.log(arr);
 							var i;
 							for(i = 0; i < arr.length; i++) {
-								var t = "https://www.youtube.com/embed/" + arr[point][i];
+								var v = '';
+								while(arr[i] !== ',') {
+									v += arr[i];
+									i++;
+								}
+								var t = "https://www.youtube.com/embed/" + v;
 								console.log(t);
 								$('VIDS').append('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 							}
