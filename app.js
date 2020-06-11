@@ -231,18 +231,24 @@ function vids(e, legendItem) {
 			largeVidID[6], largeVidID[7], largeVidID[8], largeVidID[9]];
 	var arr = mapTmp[point];
 	console.log(arr);
-	var i;
-	for(i = 0; i < arr.length; i++) {
-		var v = '';
-		while(arr[i] !== ',' && i < arr.length) {
-			v += arr[i];
-			i++;
-		}
+	//var i;
+	for(var v of arr) {
 		var t = "https://www.youtube.com/embed/" + v;
 		console.log(t);
 		//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
 		$(`<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>`).appendTo(`#VIDS`);
 	}
+	// for(i = 0; i < arr.length; i++) {
+	// 	var v = '';
+	// 	while(arr[i] !== ',' && i < arr.length) {
+	// 		v += arr[i];
+	// 		i++;
+	// 	}
+	// 	var t = "https://www.youtube.com/embed/" + v;
+	// 	console.log(t);
+	// 	//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
+	// 	$(`<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>`).appendTo(`#VIDS`);
+	// }
 }
 
 function thisBar(evt, myChart) {
