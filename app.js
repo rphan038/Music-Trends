@@ -92,6 +92,7 @@ function hotTags(country) {
 				});
 				var largestV = [];
 				var largestK = [];
+				var largeVidID = [[]];
 				for(var i = 0; i < 10; i++) {
 					var x = 0;
 					var y = '';
@@ -104,6 +105,7 @@ function hotTags(country) {
 					}
 					largestV[i] = x;
 					largestK[i] = y;
+					largeVidID[i] = tagsMapVids.get(largestK[i]);
 				}
 				$('main').append(`<canvas id="chart" width="400" height="400"></canvas>
 					<script>
@@ -208,9 +210,8 @@ function hotTags(country) {
 							var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
 									'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
 									'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
-							var mapTmp = new Map();
-							mapTmp = ${tagsMapVids};
-							var arr = mapTmp.get(tmp[point]);
+							var mapTmp = ${largeVidID};
+							var arr = mapTmp[point];
 							for(var v of arr) {
 								console.log(v);
 								$('VIDS').append('<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
