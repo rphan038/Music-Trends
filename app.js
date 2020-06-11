@@ -119,9 +119,6 @@ function hotTags(country) {
 										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
 										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 							data: {
-								labels: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
-										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
-										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
 								datasets: [{
 									label: '${largestK[0]}',
 									backgroundColor: 'rgba(255, 99, 132, 0.5)',
@@ -220,7 +217,7 @@ function vids(e, legendItem) {
 	//var point = myChart.getElementAtEvent(evt)[0];
 	console.log(point);
 	//console.log(myChart.data.labels[point._index]);
-	$('VIDS').empty();
+	$(`#VIDS`).empty();
 	//var label = myChart.data.labels[point._index];
 	var tmp = [largestK[0], largestK[1], largestK[2], 
 			largestK[3], largestK[4], largestK[5], 
