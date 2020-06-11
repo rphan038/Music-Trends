@@ -222,7 +222,7 @@ function hotTags(country) {
 							var i;
 							for(i = 0; i < arr.length; i++) {
 								var v = '';
-								while(arr[i] !== ',') {
+								while(arr[i] !== ',' && i < arr.length) {
 									v += arr[i];
 									i++;
 								}
