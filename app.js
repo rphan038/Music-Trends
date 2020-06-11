@@ -2,6 +2,9 @@ const countrySelector_select = document.getElementById("country-names");
 var currCountry_option = document.getElementById("country-names").value;
 const currentPage_p = document.querySelector(".current-page > p");
 var currTab = 't';
+var largestV = [];
+var largestK = [];
+var largeVidID = [[]];
 
 function main() {
 	trending("South Korea");
@@ -90,9 +93,6 @@ function hotTags(country) {
 						});
 					}
 				});
-				var largestV = [];
-				var largestK = [];
-				var largeVidID = [[]];
 				for(var i = 0; i < 10; i++) {
 					var x = 0;
 					var y = '';
@@ -222,13 +222,13 @@ function vids(e, legendItem) {
 	//console.log(myChart.data.labels[point._index]);
 	$('VIDS').empty();
 	//var label = myChart.data.labels[point._index];
-	var tmp = ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
-			'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
-			'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'];
+	var tmp = [largestK[0], largestK[1], largestK[2], 
+			largestK[3], largestK[4], largestK[5], 
+			largestK[6], largestK[7], largestK[8], largestK[9]];
 	var mapTmp = [[]];
-	mapTmp = ['${largeVidID[0]}', '${largeVidID[1]}', '${largeVidID[2]}', 
-			'${largeVidID[3]}', '${largeVidID[4]}', '${largeVidID[5]}', 
-			'${largeVidID[6]}', '${largeVidID[7]}', '${largeVidID[8]}', '${largeVidID[9]}'];
+	mapTmp = [largeVidID[0], largeVidID[1], largeVidID[2], 
+			largeVidID[3], largeVidID[4], largeVidID[5], 
+			largeVidID[6], largeVidID[7], largeVidID[8], largeVidID[9]];
 	var arr = mapTmp[point];
 	console.log(arr);
 	var i;
@@ -241,7 +241,7 @@ function vids(e, legendItem) {
 		var t = "https://www.youtube.com/embed/" + v;
 		console.log(t);
 		//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
-		$('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>').appendTo('#VIDS');
+		$(`<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>`).appendTo(`#VIDS`);
 	}
 }
 
