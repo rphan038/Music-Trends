@@ -233,7 +233,7 @@ function hotTags(country) {
 								var t = "https://www.youtube.com/embed/" + v;
 								console.log(t);
 								//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
-								$('<iframe width="560" height="315" src=t frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>').appendTo('#VIDS');
+								$('<iframe width="560" height="315" src=${t} frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>').appendTo('#VIDS');
 							}
 						}
 					</script>
