@@ -112,41 +112,67 @@ function hotTags(country) {
 						var myChart = new Chart(ctx, {
 							type: 'bar',
 							data: {
-								labels: [['${largestK[0]}'], ['${largestK[1]}'], ['${largestK[2]}'], 
-										['${largestK[3]}'], ['${largestK[4]}'], ['${largestK[5]}'], 
-										['${largestK[6]}'], ['${largestK[7]}'], ['${largestK[8]}'], ['${largestK[9]}']],
+								labels: ['Tags'],
 								datasets: [{
-									label: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
-										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
-										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
-									data: [${largestV[0]}, ${largestV[1]}, ${largestV[2]}, 
-										${largestV[3]}, ${largestV[4]}, ${largestV[5]}, 
-										${largestV[6]}, ${largestV[7]}, ${largestV[8]}, ${largestV[9]}],
-									backgroundColor: [
-						                'rgba(255, 99, 132, 0.5)',
-						                'rgba(54, 162, 235, 0.5)',
-						                'rgba(255, 206, 86, 0.5)',
-						                'rgba(75, 192, 192, 0.5)',
-						                'rgba(153, 102, 255, 0.5)',
-						                'rgba(255, 159, 64, 0.5)',
-						                'rgba(5, 57, 111, 0.5)',
-						                'rgba(172, 128, 225, 0.5)',
-						                'rgba(143, 147, 149, 0.5)',
-						                'rgba(116, 232, 127, 0.5)'
-						            ],
-						            borderColor: [
-						                'rgba(255, 99, 132, 1)',
-						                'rgba(54, 162, 235, 1)',
-						                'rgba(255, 206, 86, 1)',
-						                'rgba(75, 192, 192, 1)',
-						                'rgba(153, 102, 255, 1)',
-						                'rgba(255, 159, 64, 1)',
-						                'rgba(5, 57, 111, 1)',
-						                'rgba(172, 128, 225, 1)',
-						                'rgba(143, 147, 149, 1)',
-						                'rgba(116, 232, 127, 1)'
-						            ],
-						            borderWidth: 1
+									label: '${largestK[0]}',
+									backgroundColor: 'rgba(255, 99, 132, 0.5)',
+									borderColor: 'rgba(255, 99, 132, 1)',
+									data: '${largestV[0]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[1]}',
+									backgroundColor: 'rgba(54, 162, 235, 0.5)',
+									borderColor: 'rgba(54, 162, 235, 1)',
+									data: '${largestV[1]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[2]}',
+									backgroundColor: 'rgba(255, 206, 86, 0.5)',
+									borderColor: 'rgba(255, 206, 86, 1)',
+									data: '${largestV[2]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[3]}',
+									backgroundColor: 'rgba(75, 192, 192, 0.5)',
+									borderColor: 'rgba(75, 192, 192, 1)',
+									data: '${largestV[3]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[4]}',
+									backgroundColor: 'rgba(153, 102, 255, 0.5)',
+									borderColor: 'rgba(153, 102, 255, 1)',
+									data: '${largestV[4]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[5]}',
+									backgroundColor: 'rgba(255, 159, 64, 0.5)',
+									borderColor: 'rgba(255, 159, 64, 1)',
+									data: '${largestV[5]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[6]}',
+									backgroundColor: 'rgba(5, 57, 111, 0.5)',
+									borderColor: 'rgba(5, 57, 111, 1)',
+									data: '${largestV[6]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[7]}',
+									backgroundColor: 'rgba(172, 128, 225, 0.5)',
+									borderColor: 'rgba(172, 128, 225, 1)',
+									data: '${largestV[7]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[8]}',
+									backgroundColor: 'rgba(143, 147, 149, 0.5)',
+									borderColor: 'rgba(143, 147, 149, 1)',
+									data: '${largestV[8]}',
+									borderWidth: 1,
+								}, {
+									label: '${largestK[9]}',
+									backgroundColor: 'rgba(116, 232, 127, 0.5)'
+									borderColor: 'rgba(116, 232, 127, 1)'
+									data: '${largestV[9]}',
+									borderWidth: 1,
 								}]
 							},
 							options: {
@@ -266,4 +292,37 @@ function trending(country) {
 		}
 	});
 }
+/*
+									label: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
+										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
+									data: [${largestV[0]}, ${largestV[1]}, ${largestV[2]}, 
+										${largestV[3]}, ${largestV[4]}, ${largestV[5]}, 
+										${largestV[6]}, ${largestV[7]}, ${largestV[8]}, ${largestV[9]}],
+									backgroundColor: [
+						                'rgba(255, 99, 132, 0.5)',
+						                'rgba(54, 162, 235, 0.5)',
+						                /'rgba(255, 206, 86, 0.5)',
+						                /'rgba(75, 192, 192, 0.5)',
+						                /'rgba(153, 102, 255, 0.5)',
+						                /'rgba(255, 159, 64, 0.5)',
+						                /'rgba(5, 57, 111, 0.5)',
+						                /'rgba(172, 128, 225, 0.5)',
+						                /'rgba(143, 147, 149, 0.5)',
+						                'rgba(116, 232, 127, 0.5)'
+						            ],
+						            borderColor: [
+						                'rgba(255, 99, 132, 1)',
+						                'rgba(54, 162, 235, 1)',
+						                /'rgba(255, 206, 86, 1)',
+						                /'rgba(75, 192, 192, 1)',
+						                'rgba(153, 102, 255, 1)',
+						                'rgba(255, 159, 64, 1)',
+						                'rgba(5, 57, 111, 1)',
+						                'rgba(172, 128, 225, 1)',
+						                'rgba(143, 147, 149, 1)',
+						                'rgba(116, 232, 127, 1)'
+						            ],
+						            borderWidth: 1
+								} */
 main();
