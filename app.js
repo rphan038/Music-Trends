@@ -116,55 +116,63 @@ function hotTags(country) {
 						var myChart = new Chart(ctx, {
 							type: 'bar',
 							data: {
-								labels: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
-										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
-										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
+								labels: 'Tags',
 								datasets: [{
+									label: '${largestK[0]}',
 									backgroundColor: 'rgba(255, 99, 132, 0.5)',
 									borderColor: 'rgba(255, 99, 132, 1)',
 									data: '${largestV[0]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[1]}',
 									backgroundColor: 'rgba(54, 162, 235, 0.5)',
 									borderColor: 'rgba(54, 162, 235, 1)',
 									data: '${largestV[1]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[2]}',
 									backgroundColor: 'rgba(255, 206, 86, 0.5)',
 									borderColor: 'rgba(255, 206, 86, 1)',
 									data: '${largestV[2]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[3]}',
 									backgroundColor: 'rgba(75, 192, 192, 0.5)',
 									borderColor: 'rgba(75, 192, 192, 1)',
 									data: '${largestV[3]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[4]}',
 									backgroundColor: 'rgba(153, 102, 255, 0.5)',
 									borderColor: 'rgba(153, 102, 255, 1)',
 									data: '${largestV[4]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[5]}',
 									backgroundColor: 'rgba(255, 159, 64, 0.5)',
 									borderColor: 'rgba(255, 159, 64, 1)',
 									data: '${largestV[5]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[6]}',
 									backgroundColor: 'rgba(5, 57, 111, 0.5)',
 									borderColor: 'rgba(5, 57, 111, 1)',
 									data: '${largestV[6]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[7]}',
 									backgroundColor: 'rgba(172, 128, 225, 0.5)',
 									borderColor: 'rgba(172, 128, 225, 1)',
 									data: '${largestV[7]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[8]}',
 									backgroundColor: 'rgba(143, 147, 149, 0.5)',
 									borderColor: 'rgba(143, 147, 149, 1)',
 									data: '${largestV[8]}',
 									borderWidth: 1,
 								}, {
+									label: '${largestK[9]}',
 									backgroundColor: 'rgba(116, 232, 127, 0.5)',
 									borderColor: 'rgba(116, 232, 127, 1)',
 									data: '${largestV[9]}',
@@ -186,15 +194,13 @@ function hotTags(country) {
 										}
 									}],
 									xAxes: [{
-										tics: {
+										ticks: {
 											fontColor: "black"
 										}
 									}]
 								}
 							}
 						});
-						//document.getElementById("chart").onclick = thisBar(jQuery.Event("click"), myChart);
-						
 					</script>
 				`);
 			});
@@ -204,11 +210,8 @@ function hotTags(country) {
 
 function vids(e, legendItem) {
 	var point = legendItem.datasetIndex;
-	//var point = myChart.getElementAtEvent(evt)[0];
 	console.log(point);
-	//console.log(myChart.data.labels[point._index]);
 	$(`#VIDS`).empty();
-	//var label = myChart.data.labels[point._index];
 	var tmp = [largestK[0], largestK[1], largestK[2], 
 			largestK[3], largestK[4], largestK[5], 
 			largestK[6], largestK[7], largestK[8], largestK[9]];
@@ -218,39 +221,11 @@ function vids(e, legendItem) {
 			largeVidID[6], largeVidID[7], largeVidID[8], largeVidID[9]];
 	var arr = mapTmp[point];
 	console.log(arr);
-	//var i;
 	for(var v of arr) {
 		var t = "https://www.youtube.com/embed/" + v;
 		console.log(t);
-		//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
-		$(`<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>`).appendTo(`#VIDS`);
-	}
-	// for(i = 0; i < arr.length; i++) {
-	// 	var v = '';
-	// 	while(arr[i] !== ',' && i < arr.length) {
-	// 		v += arr[i];
-	// 		i++;
-	// 	}
-	// 	var t = "https://www.youtube.com/embed/" + v;
-	// 	console.log(t);
-	// 	//$('VIDS').append('<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>');
-	// 	$(`<iframe width="560" height="315" src="${t}" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>`).appendTo(`#VIDS`);
-	// }
-}
-
-function thisBar(evt, myChart) {
-	var point = myChart.getElementAtEvent(evt)[0];
-	console.log("TEST");
-	console.log(myChart.data.labels[point._index]);
-	if(point) {
-		$('VIDS').empty();
-		var label = myChart.data.labels[point._index];
-		var arr = tagsMapVids.get(label);
-		for(var v of arr) {
-			$('VIDS').append(`<iframe width="560" height="315" src="https://www.youtube.com/embed/${v}" 
-				frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>
-			`);
-		}
+		$(`<iframe width="560" height="315" src="${t}" frameborder="0" 
+			allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe>`).appendTo(`#VIDS`);
 	}
 }
 
