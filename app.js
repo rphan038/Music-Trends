@@ -115,10 +115,10 @@ function hotTags(country) {
 						Chart.defaults.global.defaultFontColor = 'black';
 						var myChart = new Chart(ctx, {
 							type: 'bar',
-							label: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
+							data: {
+								label: ['${largestK[0]}', '${largestK[1]}', '${largestK[2]}', 
 										'${largestK[3]}', '${largestK[4]}', '${largestK[5]}', 
 										'${largestK[6]}', '${largestK[7]}', '${largestK[8]}', '${largestK[9]}'],
-							data: {
 								datasets: [{
 									label: '${largestK[0]}',
 									backgroundColor: 'rgba(255, 99, 132, 0.5)',
