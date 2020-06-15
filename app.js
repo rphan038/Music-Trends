@@ -108,6 +108,30 @@ function hotTags(country) {
 					largeVidID[i] = tagsMapVids.get(largestK[i]);
 				}
 				$('main').append(`<canvas id="chart" width="400" height="400"></canvas>
+					<style>
+						.tooltip {
+						  position: relative;
+						  display: inline-block;
+						}
+
+						.tooltip .tooltiptext {
+						  visibility: hidden;
+						  width: 120px;
+						  background-color: black;
+						  color: #fff;
+						  text-align: center;
+						  border-radius: 6px;
+						  padding: 5px 0;
+
+						  /* Position the tooltip */
+						  position: absolute;
+						  z-index: 1;
+						}
+
+						.tooltip:hover .tooltiptext {
+						  visibility: visible;
+						}
+					</style>
 					<div class="media" id="VIDS">
 						<div class="tooltip">Videos
 							<span class="tooltiptext">Click on the colored boxes in the legend to load the corresponding videos</span>
