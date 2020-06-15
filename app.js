@@ -117,6 +117,9 @@ function hotTags(country) {
 						.tooltip .tooltiptext {
 						  visibility: hidden;
 						  width: 120px;
+						  top: 100%;
+						  left: 50%;
+						  margin-left: -60px;
 						  background-color: black;
 						  color: #fff;
 						  text-align: center;
