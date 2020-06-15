@@ -113,7 +113,6 @@ function hotTags(country) {
 						  position: relative;
 						  display: inline-block;
 						  border-bottom: 1px dotted black;
-						  font-weight: bold;
 						}
 
 						.tooltip .tooltiptext {
@@ -136,7 +135,7 @@ function hotTags(country) {
 						.tooltip .tooltiptext::after {
 							content: "";
 							position: absolute;
-							top: 100%;
+							bottom: 100%;
 							left 50%;
 							margin-left: -5px;
 							border-width: 5px;
