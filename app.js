@@ -108,8 +108,10 @@ function hotTags(country) {
 					largeVidID[i] = tagsMapVids.get(largestK[i]);
 				}
 				$('main').append(`<canvas id="chart" width="400" height="400"></canvas>
-					<div class="tooltip" id="VIDS">Videos
-						<span class="tooltiptext">Click on the colored boxes in the legend to load the corresponding videos</span>
+					<div class="media" id="VIDS">
+						<div class="tooltip">Videos
+							<span class="tooltiptext">Click on the colored boxes in the legend to load the corresponding videos</span>
+						</div>
 					</div>
 					<script>
 						var ctx = document.getElementById('chart').getContext('2d');
