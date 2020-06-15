@@ -125,7 +125,7 @@ function hotTags(country) {
 						  color: #fff;
 						  text-align: center;
 						  border-radius: 6px;
-						  padding: 2px 0;
+						  padding: 0.5px 0;
 
 						  /* Position the tooltip */
 						  position: absolute;
@@ -140,7 +140,7 @@ function hotTags(country) {
 							margin-left: -5px;
 							border-width: 5px;
 							border-style: solid;
-							border-color: black transparent transparent transparent;
+							border-color: transparent transparent black transparent;
 						}
 
 						.tooltip:hover .tooltiptext {
