@@ -125,7 +125,7 @@ function hotTags(country) {
 						  color: #fff;
 						  text-align: center;
 						  border-radius: 6px;
-						  padding: 5px 0;
+						  padding: 2px 0;
 
 						  /* Position the tooltip */
 						  position: absolute;
@@ -136,7 +136,7 @@ function hotTags(country) {
 							content: "";
 							position: absolute;
 							bottom: 100%;
-							left 50%;
+							left: 50%;
 							margin-left: -5px;
 							border-width: 5px;
 							border-style: solid;
