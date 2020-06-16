@@ -2,12 +2,14 @@ const countrySelector_select = document.getElementById("country-names");
 var currCountry_option = document.getElementById("country-names").value;
 const currentPage_p = document.querySelector(".current-page > p");
 var currTab = 't';
+var tabTitle = document.querySelector(".current-page > p");;
 var largestV = [];
 var largestK = [];
 var largeVidID = [[]];
 
 function main() {
 	trending("South Korea");
+	currCountry_option = "South Korea";
 	countrySelector_select.onchange = function() {
 		currCountry_option.innerHTML = document.getElementById("country-names").value;
 		currCountry_option = document.getElementById("country-names").value;
@@ -45,11 +47,13 @@ function countryToISO(country) {
 
 function changeStat(stat) {
 	if(stat === "t") {
-		trending("South Korea");
+		trending(currCountry_option);
 		currTab = 't';
+		tabTitle.innerHTML = "Trending Songs";
 	} else if(stat === "p") {
-		hotTags("South Korea");
+		hotTags(currCountry_option);
 		currTab = 'h'
+		tabTitle.innerHTML = "Trending Tags";
 	}
 }
 
@@ -125,7 +129,7 @@ function hotTags(country) {
 						  color: #fff;
 						  text-align: center;
 						  border-radius: 6px;
-						  padding: 0.5px 0;
+						  padding: 2px 0;
 
 						  /* Position the tooltip */
 						  position: absolute;
