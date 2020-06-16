@@ -117,8 +117,9 @@ function hotTags(country) {
 						  position: relative;
 						  display: inline-block;
 						  border-bottom: 1px dotted black;
-						  text-align: center;
+						  padding 10px;
 						  font-weight: bold;
+						  color: blue;
 						}
 
 						.tooltip .tooltiptext {
