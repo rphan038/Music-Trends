@@ -2,7 +2,7 @@
 const countrySelector_select = document.getElementById("country-names");
 var currCountry_option = document.getElementById("country-names").value;
 var currTab = 't';
-var tabTitle = document.querySelector(".current-page > p");;
+var tabTitle = document.querySelector(".current-page > p");
 var largestV = [];
 var largestK = [];
 var largeVidID = [[]];
@@ -13,9 +13,9 @@ var largeVidID = [[]];
  */
 function main() {
 	// The page that loads when the URL is typed, which is the trending songs page
-	trending("South Korea");
+	trending("Australia");
 	//Develops the functionality of the dropdown menu
-	currCountry_option = "South Korea";
+	currCountry_option = "Australia";
 	countrySelector_select.onchange = function() {
 		currCountry_option.innerHTML = document.getElementById("country-names").value;
 		currCountry_option = document.getElementById("country-names").value;
